@@ -120,6 +120,10 @@ jobs:
         working-directory: ${{ env.base_dir }}
         run: west zephyr-export
 
+      - name: Fetch espressif hal
+        working-directory: ${{ env.base_dir }}
+        run: west blobs fetch hal_espressif
+
       - name: West Build (${{ env.display_name }})
         working-directory: ${{ env.base_dir }}
         shell: sh -x {0}
